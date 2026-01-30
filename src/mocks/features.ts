@@ -1,0 +1,27 @@
+const features = [
+  'Wi-Fi',
+  'Heating',
+  'Kitchen',
+  'Fridge',
+  'Washing machine',
+  'Coffee machine',
+  'Dishwasher',
+  'Towels',
+  'Baby seat',
+  'Cabel TV',
+  'Oven',
+  'Microwave',
+  'Air conditioning',
+  'Smart TV',
+  'Sound system',
+  'Security system',
+  'Smart lock',
+  'Smart lighting',
+  'Smart thermostat',
+  'Smart blinds',
+  'Smart speakers',
+  'Smart plugs',
+  'Smart cameras',
+];
+
+export default features;
