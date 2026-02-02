@@ -1,4 +1,4 @@
-import { STARS_COUNT } from './const';
+import { STARS_COUNT } from '../const/const';
 
 import { Fragment, useState } from 'react';
 import { ChangeEvent } from 'react';
@@ -27,33 +27,30 @@ const Form = () => {
       </label>
 
       <div className="reviews__rating-form form__rating">
-        {Array.from({ length: STARS_COUNT }, (_, i) => {
-          /* eslint-disable no-console */
-          console.log(STARS_COUNT - i, rating);
-          return (
-            <Fragment key={`Star ${STARS_COUNT - i}`}>
-              <input
-                className="form__rating-input visually-hidden"
-                name="rating"
-                defaultValue={STARS_COUNT - i}
-                id={`${STARS_COUNT - i}-stars`}
-                type="radio"
+        {Array.from({ length: STARS_COUNT }, (_, i) => (
+          <Fragment key={`Star ${STARS_COUNT - i}`}>
+            <input
+              className="form__rating-input visually-hidden"
+              name="rating"
+              defaultValue={STARS_COUNT - i}
+              id={`${STARS_COUNT - i}-stars`}
+              type="radio"
 
-                checked={STARS_COUNT - i === rating}
-                onChange={handleInputChange}
-              />
-              <label
-                htmlFor="5-stars"
-                className="reviews__rating-label form__rating-label"
-                title="ok)"
-              >
-                <svg className="form__star-image" width={37} height={33}>
-                  <use xlinkHref="#icon-star" color='green'/>
-                </svg>
-              </label>
-            </Fragment>
-          );
-        })}
+              checked={STARS_COUNT - i === rating}
+              onChange={handleInputChange}
+            />
+            <label
+              htmlFor="5-stars"
+              className="reviews__rating-label form__rating-label"
+              title="ok)"
+            >
+              <svg className="form__star-image" width={37} height={33}>
+                <use xlinkHref="#icon-star" color='green' />
+              </svg>
+            </label>
+          </Fragment>
+        )
+        )}
 
         {/* <input className="form__rating-input visually-hidden" name="rating" defaultValue={5} id="5-stars" type="radio" />
         <label htmlFor="5-stars" className="reviews__rating-label form__rating-label" title="perfect">

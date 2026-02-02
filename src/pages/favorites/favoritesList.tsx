@@ -1,7 +1,7 @@
-import { STARS_COUNT, MAX_PERCENT_STARS_WIDTH } from '../../components/const';
+import { STARS_COUNT, MAX_PERCENT_STARS_WIDTH } from '../../const/const';
 
 import { Link } from 'react-router-dom';
-import type { Offer } from '../../mocks/offer';
+import type { Offer } from '../../types/types';
 
 type FavoritesListProps = {
   offers: Offer[];

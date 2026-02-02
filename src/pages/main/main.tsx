@@ -1,12 +1,23 @@
-import Card from '../../components/card';
-import {Link} from 'react-router-dom';
+import { useState } from 'react';
+import CardList from '../../components/cardList';
+import Map from '../../components/map';
+import { Link } from 'react-router-dom';
+
+import type { Offer, City, Location } from '../../types/types';
 
 
 type MainProps = {
-  offersCount: number;
+  offers: Offer[];
+  city: City;
 }
 
-function Main({ offersCount = 0 }: MainProps): JSX.Element {
+function Main({ offers, city }: MainProps): JSX.Element {
+  const [selectedPoint, setSelectedPoint] = useState<Location | null>(null);
+
+  const onCardItemHover = (location: Location | null) => {
+    setSelectedPoint(location);
+  };
+
   return (
     <div className="page page--gray page--main">
       <header className="header">
@@ -96,11 +107,34 @@ function Main({ offersCount = 0 }: MainProps): JSX.Element {
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                {Array.from({ length: offersCount }, () => <Card key={0} />)}
+                <CardList
+                  offers={offers}
+                  onMouseHover={onCardItemHover}
+                  place={'cities'}
+                />
+                {/* <CardList offers={Array.from({ length: offersCount }, (_, index) => ({
+                  id: index,
+                  price: 200,
+                  rating: 4.4,
+                  title: 'Beautiful & luxurious apartment at great location',
+                  isPremium: true,
+                  isFavorite: false,
+                  previewImage: 'img/apartment-01.jpg',
+                  type: 'apartment',
+                  city: {
+                    name: 'Amsterdam'
+                  }
+                }))} /> */}
+                {/* {Array.from({ length: offersCount }, () => <Card key={0} />)} */}
               </div>
             </section>
             <div className="cities__right-section">
-              <section className="cities__map map"></section>
+              <Map
+                city={city}
+                locations={offers.map((offer) => offer.location)}
+                selectedPoint={selectedPoint}
+                place={'cities'}
+              />
             </div>
           </div>
         </div>

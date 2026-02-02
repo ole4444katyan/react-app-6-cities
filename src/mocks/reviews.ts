@@ -1,4 +1,4 @@
-import type { Review } from './review';
+import type { Review } from '../types/types';
 
 const reviews: Review[] = [
   {
@@ -7,10 +7,12 @@ const reviews: Review[] = [
     text: 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.',
     date: '2019-08',
     user: {
-      avatar: '/img/avatar-max.jpg',
+      id: 1,
       name: 'Max',
+      avatarUrl: '/img/avatar-max.jpg',
+      isPro: false,
     },
-    propertyId: 1,
+    offerId: 1,
   },
   {
     id: 2,
@@ -18,10 +20,12 @@ const reviews: Review[] = [
     text: '2A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.',
     date: '2022-01',
     user: {
-      avatar: '/img/avatar-max.jpg',
-      name: 'Bill',
+      id: 2,
+      name: 'Angelina',
+      avatarUrl: '/img/avatar-angelina.jpg',
+      isPro: false,
     },
-    propertyId: 1,
+    offerId: 3,
   },
   {
     id: 3,
@@ -29,10 +33,12 @@ const reviews: Review[] = [
     text: '3A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.',
     date: '2009-12',
     user: {
-      avatar: '/img/avatar-max.jpg',
-      name: 'Evelyn',
+      id: 3,
+      name: 'Bill',
+      avatarUrl: '',
+      isPro: true,
     },
-    propertyId: 1,
+    offerId: 1,
   },
 
 ];

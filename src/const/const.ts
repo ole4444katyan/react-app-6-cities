@@ -1,4 +1,7 @@
-const features = [
+const STARS_COUNT = 5;
+const MAX_PERCENT_STARS_WIDTH = 100;
+
+const FEATURES = [
   'Wi-Fi',
   'Heating',
   'Kitchen',
@@ -24,4 +27,11 @@ const features = [
   'Smart cameras',
 ];
 
-export default features;
+const CITIES = ['Paris', 'Cologne', 'Brussels', 'Amsterdam', 'Hamburg', 'Dusseldorf'] as const;
+
+export const URL_MARKER_DEFAULT = '/img/pin.svg';
+
+export const URL_MARKER_CURRENT = '/img/pin-active.svg';
+
+
+export { STARS_COUNT, MAX_PERCENT_STARS_WIDTH, FEATURES, CITIES };
